@@ -1,103 +1,359 @@
-import Image from "next/image";
+"use client";
+
+import { motion } from "framer-motion";
+import Link from "next/link";
+import Navigation from "../components/Navigation";
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.6,
+        staggerChildren: 0.2,
+      },
+    },
+  };
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+  const itemVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6 },
+    },
+  };
+
+  const sections = [
+    {
+      title: "My Expertise",
+      description: "Explore my technical skills and specializations",
+      href: "/expertise",
+      icon: "🚀",
+      gradient: "from-purple-600 to-purple-800",
+    },
+    {
+      title: "Work Experience",
+      description: "Discover my professional experience and achievements",
+      href: "/experience",
+      icon: "💼",
+      gradient: "from-green-600 to-green-800",
+    },
+    {
+      title: "Projects",
+      description: "Browse through my portfolio of completed projects",
+      href: "/projects",
+      icon: "🛠️",
+      gradient: "from-orange-600 to-orange-800",
+    },
+    {
+      title: "Technical Skills",
+      description: "View my comprehensive technical skill set",
+      href: "/skills",
+      icon: "⚙️",
+      gradient: "from-red-600 to-red-800",
+    },
+    {
+      title: "Training & Certifications",
+      description: "Check out my continuous learning journey",
+      href: "/trainings",
+      icon: "🎓",
+      gradient: "from-indigo-600 to-indigo-800",
+    },
+  ];
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white">
+      <Navigation />
+
+      <motion.div
+        className="container mx-auto px-6 py-24"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        {/* Hero Section */}
+        <motion.section
+          className="text-center py-20 mb-20"
+          variants={itemVariants}
+        >
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            <h1 className="text-7xl font-bold mb-6">
+              <motion.span
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
+                Sherwin Christopher
+              </motion.span>
+              <br />
+              <motion.span
+                className="text-purple-400"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+              >
+                F. Roxas
+              </motion.span>
+            </h1>
+
+            <motion.h2
+              className="text-3xl text-gray-300 mb-8 tracking-wider"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+            >
+              FULL STACK DEVELOPER
+            </motion.h2>
+
+            <motion.p
+              className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed mb-12"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.0 }}
+            >
+              Welcome to my portfolio!
+            </motion.p>
+
+            <motion.div
+              className="flex flex-wrap justify-center gap-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.2 }}
+            >
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Link
+                  href="/contact"
+                  className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors shadow-lg"
+                >
+                  Get In Touch
+                </Link>
+              </motion.div>
+
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Link
+                  href="/projects"
+                  className="border border-purple-600 text-purple-400 hover:bg-purple-600/10 px-8 py-4 rounded-lg font-semibold text-lg transition-colors shadow-lg"
+                >
+                  View My Work
+                </Link>
+              </motion.div>
+            </motion.div>
+          </motion.div>
+        </motion.section>
+
+        {/* Quick Stats */}
+        <motion.section
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-20 max-w-3xl mx-auto"
+          variants={itemVariants}
+        >
+          {[
+            { number: "7+", label: "Years Experience", icon: "📅" },
+            { number: "11+", label: "Projects Completed", icon: "🚀" },
+          ].map((stat, index) => (
+            <motion.div
+              key={stat.label}
+              className="text-center bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg border border-slate-700"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
+              whileHover={{
+                scale: 1.05,
+                backgroundColor: "rgba(51, 65, 85, 0.6)",
+              }}
+            >
+              <div className="text-3xl mb-2">{stat.icon}</div>
+              <div className="text-2xl font-bold text-purple-400 mb-1">
+                {stat.number}
+              </div>
+              <div className="text-gray-300 text-sm">{stat.label}</div>
+            </motion.div>
+          ))}
+        </motion.section>
+
+        {/* Navigation Sections */}
+        <motion.section variants={itemVariants}>
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
           >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+            <h2 className="text-4xl font-bold mb-4 text-purple-400">
+              Explore My Portfolio
+            </h2>
+            <div className="w-24 h-1 bg-purple-400 mx-auto mb-6"></div>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Discover different aspects of my professional journey and
+              technical expertise
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {sections.map((section, index) => (
+              <motion.div
+                key={section.title}
+                initial={{ opacity: 0, y: 50, scale: 0.9 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 0.6, delay: 1.0 + index * 0.1 }}
+                whileHover={{
+                  scale: 1.05,
+                  transition: { duration: 0.2 },
+                }}
+              >
+                <Link href={section.href}>
+                  <div
+                    className={`bg-gradient-to-br ${section.gradient} p-8 rounded-lg border border-slate-600 relative overflow-hidden cursor-pointer group h-full`}
+                  >
+                    {/* Background decoration */}
+                    <motion.div
+                      className="absolute -top-4 -right-4 w-24 h-24 opacity-20 group-hover:opacity-30 transition-opacity"
+                      animate={{ rotate: 360 }}
+                      transition={{
+                        duration: 20,
+                        repeat: Infinity,
+                        ease: "linear",
+                      }}
+                    >
+                      <div className="text-6xl">{section.icon}</div>
+                    </motion.div>
+
+                    <div className="relative z-10">
+                      <motion.div
+                        className="flex items-center mb-6"
+                        whileHover={{ x: 5 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <span className="text-4xl mr-4">{section.icon}</span>
+                        <h3 className="text-2xl font-bold text-white">
+                          {section.title}
+                        </h3>
+                      </motion.div>
+
+                      <motion.p
+                        className="text-gray-100 leading-relaxed group-hover:text-white transition-colors"
+                        initial={{ opacity: 0.8 }}
+                        whileHover={{ opacity: 1 }}
+                      >
+                        {section.description}
+                      </motion.p>
+
+                      <motion.div
+                        className="flex items-center mt-6 text-white opacity-0 group-hover:opacity-100 transition-opacity"
+                        initial={{ x: -20 }}
+                        whileHover={{ x: 0 }}
+                      >
+                        <span className="font-semibold mr-2">Explore</span>
+                        <svg
+                          className="w-5 h-5"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M9 5l7 7-7 7"
+                          />
+                        </svg>
+                      </motion.div>
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </motion.section>
+
+        {/* Contact CTA */}
+        <motion.section className="text-center mt-20" variants={itemVariants}>
+          <motion.div
+            className="bg-slate-800/50 backdrop-blur-sm p-12 rounded-lg border border-slate-700 max-w-4xl mx-auto"
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.2 }}
+          >
+            <motion.h3
+              className="text-3xl font-bold mb-6 text-purple-400"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.5 }}
+            >
+              Ready to Work Together?
+            </motion.h3>
+
+            <motion.p
+              className="text-xl text-gray-300 mb-8 leading-relaxed"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.6 }}
+            >
+              Let's collaborate and bring your ideas to life with cutting-edge
+              technology solutions. I'm always excited to work on challenging
+              projects and deliver exceptional results.
+            </motion.p>
+
+            <motion.div
+              className="flex flex-wrap justify-center gap-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.7 }}
+            >
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Link
+                  href="/contact"
+                  className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors shadow-lg"
+                >
+                  Contact Me
+                </Link>
+              </motion.div>
+
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <a
+                  href="https://github.com/MysticMaccc"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="border border-purple-600 text-purple-400 hover:bg-purple-600/10 px-8 py-4 rounded-lg font-semibold text-lg transition-colors shadow-lg"
+                >
+                  View GitHub
+                </a>
+              </motion.div>
+            </motion.div>
+          </motion.div>
+        </motion.section>
+
+        {/* Footer */}
+        <motion.footer
+          className="text-center py-8 mt-16 border-t border-slate-700"
+          variants={itemVariants}
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+          <motion.p
+            className="text-gray-400"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 1.8 }}
+          >
+            © 2025 Sherwin Christopher F. Roxas. All rights reserved.
+          </motion.p>
+        </motion.footer>
+      </motion.div>
     </div>
   );
 }
