@@ -213,13 +213,16 @@ const Projects = () => {
         animate="visible"
       >
         {/* Page Title */}
-        <motion.div className="text-center mb-16" variants={itemVariants}>
-          <h1 className="text-5xl font-bold mb-4 text-purple-400">
+        <motion.div
+          className="text-center mb-12 sm:mb-16 px-4"
+          variants={itemVariants}
+        >
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-purple-400">
             My Projects
           </h1>
           <div className="w-24 h-1 bg-purple-400 mx-auto mb-6"></div>
           {/* <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            A showcase of successful projects delivered during my professional journey, 
+            A showcase of successful projects delivered during my professional journey,
             demonstrating expertise across web and mobile development.
           </p> */}
         </motion.div>
@@ -270,13 +273,13 @@ const Projects = () => {
 
         {/* Projects Grid */}
         <motion.section
-          className="grid grid-cols-1 lg:grid-cols-2 gap-8"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 px-4"
           variants={itemVariants}
         >
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              className={`bg-gradient-to-br ${project.gradient} p-8 rounded-lg border border-slate-600 relative overflow-hidden`}
+              className={`bg-gradient-to-br ${project.gradient} p-6 sm:p-8 rounded-lg border border-slate-600 relative overflow-hidden`}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -310,17 +313,17 @@ const Projects = () => {
                       </span>
                     </div>
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-2">
+                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-gray-100 text-sm font-medium">
+                  <p className="text-gray-100 text-xs sm:text-sm font-medium">
                     {project.company}
                   </p>
                 </motion.div>
 
                 {/* Description */}
                 <motion.p
-                  className="text-gray-100 mb-6 leading-relaxed"
+                  className="text-gray-100 text-sm sm:text-base mb-6 leading-relaxed"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.3 + index * 0.05 }}
@@ -335,7 +338,7 @@ const Projects = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.4 + index * 0.05 }}
                 >
-                  <h4 className="text-lg font-semibold mb-3 text-gray-100">
+                  <h4 className="text-base sm:text-lg font-semibold mb-3 text-gray-100">
                     Technologies:
                   </h4>
                   <div className="flex flex-wrap gap-2">
@@ -366,7 +369,7 @@ const Projects = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.5 + index * 0.05 }}
                 >
-                  <h4 className="text-lg font-semibold mb-3 text-gray-100">
+                  <h4 className="text-base sm:text-lg font-semibold mb-3 text-gray-100">
                     Key Features:
                   </h4>
                   <ul className="space-y-2">
@@ -411,14 +414,17 @@ const Projects = () => {
         </motion.section>
 
         {/* Call to Action */}
-        <motion.section className="text-center mt-16" variants={itemVariants}>
+        <motion.section
+          className="text-center mt-12 sm:mt-16 px-4"
+          variants={itemVariants}
+        >
           <motion.div
-            className="bg-slate-800/50 backdrop-blur-sm p-8 rounded-lg border border-slate-700 max-w-4xl mx-auto"
+            className="bg-slate-800/50 backdrop-blur-sm p-6 sm:p-8 rounded-lg border border-slate-700 max-w-4xl mx-auto"
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.2 }}
           >
             <motion.h3
-              className="text-3xl font-bold mb-4 text-purple-400"
+              className="text-2xl sm:text-3xl font-bold mb-4 text-purple-400"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
@@ -426,7 +432,7 @@ const Projects = () => {
               Ready to Start Your Next Project?
             </motion.h3>
             <motion.p
-              className="text-lg text-gray-300 mb-6"
+              className="text-base sm:text-lg text-gray-300 mb-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.9 }}
@@ -435,7 +441,7 @@ const Projects = () => {
               technology solutions.
             </motion.p>
             <motion.div
-              className="flex flex-wrap justify-center gap-4"
+              className="flex flex-col sm:flex-row flex-wrap justify-center gap-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.0 }}

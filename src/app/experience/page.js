@@ -109,12 +109,12 @@ const Experience = () => {
         animate="visible"
       >
         {/* Page Title */}
-        <motion.div className="text-center mb-16" variants={itemVariants}>
-          <h1 className="text-5xl font-bold mb-4 text-purple-400">
+        <motion.div className="text-center mb-12 sm:mb-16 px-4" variants={itemVariants}>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-purple-400">
             Work Experience
           </h1>
           <div className="w-24 h-1 bg-purple-400 mx-auto mb-6"></div>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
             My professional journey spanning 7+ years of software development
             experience at NYK-FIL MARITIME E-TRAINING, INC.
           </p>
@@ -122,25 +122,25 @@ const Experience = () => {
 
         {/* Timeline */}
         <motion.section
-          className="relative max-w-4xl mx-auto"
+          className="relative max-w-4xl mx-auto px-4"
           variants={itemVariants}
         >
           {/* Timeline line */}
-          <div className="absolute left-1/2 transform -translate-x-px h-full w-0.5 bg-gradient-to-b from-purple-400 to-purple-600"></div>
+          <div className="absolute left-4 md:left-1/2 transform md:-translate-x-px h-full w-0.5 bg-gradient-to-b from-purple-400 to-purple-600"></div>
 
           {experiences.map((exp, index) => (
             <motion.div
               key={index}
-              className={`relative flex items-center ${
+              className={`relative flex items-center flex-row md:${
                 index % 2 === 0 ? "flex-row-reverse" : "flex-row"
-              } mb-16`}
+              } mb-12 sm:mb-16`}
               initial={{ opacity: 0, x: index % 2 === 0 ? 100 : -100 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: index * 0.3 }}
             >
               {/* Timeline dot */}
               <motion.div
-                className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-purple-400 rounded-full border-4 border-slate-900 z-10"
+                className="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 sm:w-6 sm:h-6 bg-purple-400 rounded-full border-2 sm:border-4 border-slate-900 z-10"
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.3 + 0.2 }}
@@ -149,14 +149,14 @@ const Experience = () => {
 
               {/* Content card */}
               <motion.div
-                className={`w-5/12 ${
-                  index % 2 === 0 ? "ml-auto pr-8" : "mr-auto pl-8"
+                className={`w-full md:w-5/12 ml-12 md:ml-0 ${
+                  index % 2 === 0 ? "md:ml-auto md:pr-8" : "md:mr-auto md:pl-8"
                 }`}
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.2 }}
               >
                 <motion.div
-                  className="bg-slate-800/50 backdrop-blur-sm p-8 rounded-lg border border-slate-700 shadow-xl"
+                  className="bg-slate-800/50 backdrop-blur-sm p-4 sm:p-6 md:p-8 rounded-lg border border-slate-700 shadow-xl"
                   initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.3 + 0.1 }}
@@ -184,11 +184,11 @@ const Experience = () => {
                         {exp.duration}
                       </span>
                     </div>
-                    <h3 className="text-2xl font-bold text-purple-400 mb-1">
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-purple-400 mb-1">
                       {exp.position}
                     </h3>
-                    <p className="text-xl text-gray-300 mb-2">{exp.company}</p>
-                    <p className="text-gray-400 font-medium">{exp.period}</p>
+                    <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-2">{exp.company}</p>
+                    <p className="text-sm sm:text-base text-gray-400 font-medium">{exp.period}</p>
                   </motion.div>
 
                   {/* Achievements */}
@@ -198,7 +198,7 @@ const Experience = () => {
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.6, delay: index * 0.3 + 0.4 }}
                   >
-                    <h4 className="text-lg font-semibold text-purple-300 mb-3">
+                    <h4 className="text-base sm:text-lg font-semibold text-purple-300 mb-3">
                       Key Achievements
                     </h4>
                     <ul className="space-y-2">
@@ -228,7 +228,7 @@ const Experience = () => {
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.6, delay: index * 0.3 + 0.6 }}
                   >
-                    <h4 className="text-lg font-semibold text-purple-300 mb-3">
+                    <h4 className="text-base sm:text-lg font-semibold text-purple-300 mb-3">
                       Technologies Used
                     </h4>
                     <div className="flex flex-wrap gap-2">

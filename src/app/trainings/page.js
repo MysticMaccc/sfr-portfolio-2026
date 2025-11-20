@@ -202,8 +202,8 @@ const Trainings = () => {
         animate="visible"
       >
         {/* Page Title */}
-        <motion.div className="text-center mb-16" variants={itemVariants}>
-          <h1 className="text-5xl font-bold mb-4 text-purple-400">
+        <motion.div className="text-center mb-12 sm:mb-16 px-4" variants={itemVariants}>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-purple-400">
             Training & Certifications
           </h1>
           <div className="w-24 h-1 bg-purple-400 mx-auto mb-6"></div>
@@ -240,7 +240,7 @@ const Trainings = () => {
         </motion.section> */}
 
         {/* Training Categories */}
-        <motion.section className="space-y-12" variants={itemVariants}>
+        <motion.section className="space-y-8 sm:space-y-12 px-4" variants={itemVariants}>
           {trainingCategories.map((category, categoryIndex) => (
             <motion.div
               key={category.category}
@@ -250,19 +250,19 @@ const Trainings = () => {
             >
               {/* Category Header */}
               <motion.div
-                className="flex items-center mb-8"
+                className="flex items-center mb-6 sm:mb-8"
                 whileHover={{ scale: 1.02 }}
               >
                 <div
-                  className={`bg-gradient-to-r ${category.color} w-16 h-16 rounded-full flex items-center justify-center mr-4`}
+                  className={`bg-gradient-to-r ${category.color} w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mr-3 sm:mr-4`}
                 >
-                  <span className="text-2xl">{category.icon}</span>
+                  <span className="text-xl sm:text-2xl">{category.icon}</span>
                 </div>
                 <div>
-                  <h2 className="text-3xl font-bold text-purple-400">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-purple-400">
                     {category.category}
                   </h2>
-                  <p className="text-gray-400">
+                  <p className="text-sm sm:text-base text-gray-400">
                     {category.trainings.length} training
                     {category.trainings.length > 1 ? "s" : ""} completed
                   </p>
@@ -270,14 +270,14 @@ const Trainings = () => {
               </motion.div>
 
               {/* Training Cards */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                 {category.trainings.map((training, trainingIndex) => (
                   <motion.a
                     key={training.title}
                     href={training.certificateUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg border border-slate-700 relative overflow-hidden cursor-pointer block"
+                    className="bg-slate-800/50 backdrop-blur-sm p-4 sm:p-6 rounded-lg border border-slate-700 relative overflow-hidden cursor-pointer block"
                     initial={{ opacity: 0, y: 50, scale: 0.9 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     transition={{
@@ -316,14 +316,14 @@ const Trainings = () => {
                         }}
                       >
                         <div className="flex items-start justify-between mb-2">
-                          <h3 className="text-lg font-bold text-purple-300 leading-tight flex-1 mr-2 hover:text-purple-200 transition-colors">
+                          <h3 className="text-base sm:text-lg font-bold text-purple-300 leading-tight flex-1 mr-2 hover:text-purple-200 transition-colors">
                             {training.title}
                           </h3>
-                          <span className="bg-purple-600/20 text-purple-300 px-2 py-1 rounded-full text-xs font-medium">
+                          <span className="bg-purple-600/20 text-purple-300 px-2 py-1 rounded-full text-xs font-medium whitespace-nowrap">
                             {training.type}
                           </span>
                         </div>
-                        <p className="text-gray-400 font-medium mb-2">
+                        <p className="text-sm sm:text-base text-gray-400 font-medium mb-2">
                           {training.provider}
                         </p>
                         <div className="flex items-center gap-1 text-blue-400 text-xs font-semibold">
@@ -484,14 +484,14 @@ const Trainings = () => {
         </motion.section> */}
 
         {/* Call to Action */}
-        <motion.section className="text-center mt-16" variants={itemVariants}>
+        <motion.section className="text-center mt-12 sm:mt-16 px-4" variants={itemVariants}>
           <motion.div
-            className="bg-gradient-to-r from-purple-600/20 to-blue-600/20 backdrop-blur-sm p-8 rounded-lg border border-purple-500/30 max-w-3xl mx-auto"
+            className="bg-gradient-to-r from-purple-600/20 to-blue-600/20 backdrop-blur-sm p-6 sm:p-8 rounded-lg border border-purple-500/30 max-w-3xl mx-auto"
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.2 }}
           >
             <motion.h3
-              className="text-2xl font-bold mb-4 text-purple-400"
+              className="text-xl sm:text-2xl font-bold mb-4 text-purple-400"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.2 }}
@@ -499,7 +499,7 @@ const Trainings = () => {
               Ready to Apply These Skills?
             </motion.h3>
             <motion.p
-              className="text-lg text-gray-300 mb-6"
+              className="text-base sm:text-lg text-gray-300 mb-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.3 }}
@@ -508,7 +508,7 @@ const Trainings = () => {
               your next project.
             </motion.p>
             <motion.div
-              className="flex flex-wrap justify-center gap-4"
+              className="flex flex-col sm:flex-row flex-wrap justify-center gap-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.4 }}

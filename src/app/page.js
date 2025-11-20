@@ -83,7 +83,7 @@ export default function Home() {
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h1 className="text-7xl font-bold mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
               <motion.span
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -103,7 +103,7 @@ export default function Home() {
             </h1>
 
             <motion.h2
-              className="text-3xl text-gray-300 mb-8 tracking-wider"
+              className="text-xl sm:text-2xl md:text-3xl text-gray-300 mb-8 tracking-wider"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
@@ -112,7 +112,7 @@ export default function Home() {
             </motion.h2>
 
             <motion.p
-              className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed mb-12"
+              className="text-base sm:text-lg md:text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed mb-12 px-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.0 }}
@@ -121,7 +121,7 @@ export default function Home() {
             </motion.p>
 
             <motion.div
-              className="flex flex-wrap justify-center gap-6"
+              className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 sm:gap-6 px-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.2 }}
@@ -129,10 +129,11 @@ export default function Home() {
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                className="w-full sm:w-auto"
               >
                 <Link
                   href="/contact"
-                  className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors shadow-lg"
+                  className="block text-center bg-purple-600 hover:bg-purple-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg transition-colors shadow-lg"
                 >
                   Get In Touch
                 </Link>
@@ -141,10 +142,11 @@ export default function Home() {
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                className="w-full sm:w-auto"
               >
                 <Link
                   href="/projects"
-                  className="border border-purple-600 text-purple-400 hover:bg-purple-600/10 px-8 py-4 rounded-lg font-semibold text-lg transition-colors shadow-lg"
+                  className="block text-center border border-purple-600 text-purple-400 hover:bg-purple-600/10 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg transition-colors shadow-lg"
                 >
                   View My Work
                 </Link>
@@ -153,12 +155,13 @@ export default function Home() {
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                className="w-full sm:w-auto"
               >
                 <a
                   href="https://drive.google.com/file/d/1AwBwn1towM0A40_bNgY3OKSYE5Od-w6A/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors shadow-lg"
+                  className="block text-center bg-green-600 hover:bg-green-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg transition-colors shadow-lg"
                 >
                   View My CV
                 </a>
@@ -169,7 +172,7 @@ export default function Home() {
 
         {/* Quick Stats */}
         <motion.section
-          className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-20 max-w-3xl mx-auto"
+          className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-16 sm:mb-20 max-w-3xl mx-auto px-4"
           variants={itemVariants}
         >
           {[
@@ -199,22 +202,22 @@ export default function Home() {
         {/* Navigation Sections */}
         <motion.section variants={itemVariants}>
           <motion.div
-            className="text-center mb-16"
+            className="text-center mb-12 sm:mb-16 px-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
           >
-            <h2 className="text-4xl font-bold mb-4 text-purple-400">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-purple-400">
               Explore My Portfolio
             </h2>
             <div className="w-24 h-1 bg-purple-400 mx-auto mb-6"></div>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
               Discover different aspects of my professional journey and
               technical expertise
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 px-4">
             {sections.map((section, index) => (
               <motion.div
                 key={section.title}
@@ -292,14 +295,14 @@ export default function Home() {
         </motion.section>
 
         {/* Contact CTA */}
-        <motion.section className="text-center mt-20" variants={itemVariants}>
+        <motion.section className="text-center mt-16 sm:mt-20 px-4" variants={itemVariants}>
           <motion.div
-            className="bg-slate-800/50 backdrop-blur-sm p-12 rounded-lg border border-slate-700 max-w-4xl mx-auto"
+            className="bg-slate-800/50 backdrop-blur-sm p-6 sm:p-8 md:p-12 rounded-lg border border-slate-700 max-w-4xl mx-auto"
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.2 }}
           >
             <motion.h3
-              className="text-3xl font-bold mb-6 text-purple-400"
+              className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-purple-400"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.5 }}
@@ -308,7 +311,7 @@ export default function Home() {
             </motion.h3>
 
             <motion.p
-              className="text-xl text-gray-300 mb-8 leading-relaxed"
+              className="text-base sm:text-lg md:text-xl text-gray-300 mb-6 sm:mb-8 leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.6 }}
@@ -319,7 +322,7 @@ export default function Home() {
             </motion.p>
 
             <motion.div
-              className="flex flex-wrap justify-center gap-6"
+              className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 sm:gap-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.7 }}
@@ -327,10 +330,11 @@ export default function Home() {
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                className="w-full sm:w-auto"
               >
                 <Link
                   href="/contact"
-                  className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors shadow-lg"
+                  className="block text-center bg-purple-600 hover:bg-purple-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg transition-colors shadow-lg"
                 >
                   Contact Me
                 </Link>
@@ -339,12 +343,13 @@ export default function Home() {
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                className="w-full sm:w-auto"
               >
                 <a
                   href="https://github.com/MysticMaccc"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="border border-purple-600 text-purple-400 hover:bg-purple-600/10 px-8 py-4 rounded-lg font-semibold text-lg transition-colors shadow-lg"
+                  className="block text-center border border-purple-600 text-purple-400 hover:bg-purple-600/10 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg transition-colors shadow-lg"
                 >
                   View GitHub
                 </a>
