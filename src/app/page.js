@@ -149,6 +149,20 @@ export default function Home() {
                   View My Work
                 </Link>
               </motion.div>
+
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <a
+                  href="https://drive.google.com/file/d/1AwBwn1towM0A40_bNgY3OKSYE5Od-w6A/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors shadow-lg"
+                >
+                  View My CV
+                </a>
+              </motion.div>
             </motion.div>
           </motion.div>
         </motion.section>
