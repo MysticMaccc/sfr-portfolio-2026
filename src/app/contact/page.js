@@ -42,24 +42,24 @@ const Contact = () => {
         animate="visible"
       >
         {/* Page Title */}
-        <motion.div className="text-center mb-16" variants={itemVariants}>
-          <h1 className="text-5xl font-bold mb-4 text-purple-400">
+        <motion.div className="text-center mb-12 sm:mb-16 px-4" variants={itemVariants}>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-purple-400">
             Contact Me
           </h1>
           <div className="w-24 h-1 bg-purple-400 mx-auto mb-6"></div>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
             Let's connect!
           </p>
         </motion.div>
 
         {/* Contact Cards */}
         <motion.section
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16"
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto mb-12 sm:mb-16 px-4"
           variants={itemVariants}
         >
           {/* Phone */}
           <motion.div
-            className="bg-slate-800/50 backdrop-blur-sm p-8 rounded-lg border border-slate-700 text-center"
+            className="bg-slate-800/50 backdrop-blur-sm p-6 sm:p-8 rounded-lg border border-slate-700 text-center"
             variants={cardHoverVariants}
             whileHover="hover"
             initial={{ opacity: 0, y: 50 }}
@@ -105,7 +105,7 @@ const Contact = () => {
 
           {/* Email */}
           <motion.div
-            className="bg-slate-800/50 backdrop-blur-sm p-8 rounded-lg border border-slate-700 text-center"
+            className="bg-slate-800/50 backdrop-blur-sm p-6 sm:p-8 rounded-lg border border-slate-700 text-center"
             variants={cardHoverVariants}
             whileHover="hover"
             initial={{ opacity: 0, y: 50 }}
@@ -146,7 +146,7 @@ const Contact = () => {
 
           {/* GitHub */}
           <motion.div
-            className="bg-slate-800/50 backdrop-blur-sm p-8 rounded-lg border border-slate-700 text-center"
+            className="bg-slate-800/50 backdrop-blur-sm p-6 sm:p-8 rounded-lg border border-slate-700 text-center"
             variants={cardHoverVariants}
             whileHover="hover"
             initial={{ opacity: 0, y: 50 }}
@@ -182,16 +182,16 @@ const Contact = () => {
 
         {/* Additional Info */}
         <motion.section
-          className="text-center max-w-4xl mx-auto"
+          className="text-center max-w-4xl mx-auto px-4"
           variants={itemVariants}
         >
           <motion.div
-            className="bg-slate-800/50 backdrop-blur-sm p-8 rounded-lg border border-slate-700"
+            className="bg-slate-800/50 backdrop-blur-sm p-6 sm:p-8 rounded-lg border border-slate-700"
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.2 }}
           >
             <motion.h3
-              className="text-3xl font-bold mb-6 text-purple-400"
+              className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-purple-400"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
@@ -200,7 +200,7 @@ const Contact = () => {
             </motion.h3>
 
             <motion.div
-              className="flex flex-wrap justify-center gap-4"
+              className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.0 }}
